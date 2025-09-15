@@ -1,19 +1,35 @@
+import br.com.alura.screematch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.modelos.Filme;
+import br.com.alura.exercicios.modelos.Aluno;
+import br.com.alura.screenmatch.modelos.Serie;
+
 public class main {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
-        meuFilme.nome = "O Poderoso Chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 180;
+        meuFilme.setNome("O Poderoso Chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia( 7);
         meuFilme.avalia( 3);
         meuFilme.avalia( 10);
-        System.out.println(meuFilme.somaDasAvaliacoes);
-        System.out.println(meuFilme.totalDeAvaliacoes);
         System.out.println(meuFilme.pegaMedia());
+        System.out.println(meuFilme.getTotalDeAvaliacoes());
 
 
+        Serie novaSerie = new Serie();
+        novaSerie.setNome("Lost");
+        novaSerie.setTemporadas(10);
+        novaSerie.setEpisodiosPorTemporada(10);
+        novaSerie.setMinutosPorEpisodio(50);
 
+        System.out.println("Quanto tempo para maratonar (em minutos): "+ novaSerie.getDuracaoEmMinutos());
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+
+        calculadora.inclui(meuFilme);
+
+        System.out.println("Tempo para aproveitar a lista: " + calculadora.getTempoTotal());
     }
 }
