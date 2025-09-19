@@ -1,4 +1,5 @@
 import br.com.alura.screematch.calculos.CalculadoraDeTempo;
+import br.com.alura.screematch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.exercicios.modelos.Aluno;
 import br.com.alura.screenmatch.modelos.Serie;
@@ -26,10 +27,27 @@ public class main {
 
         System.out.println("Quanto tempo para maratonar (em minutos): "+ novaSerie.getDuracaoEmMinutos());
 
+
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento(2023);
+        outroFilme.setDuracaoEmMinutos(200);
+
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+
+        System.out.println(calculadora.getTempoTotal());
+
 
         calculadora.inclui(meuFilme);
 
         System.out.println("Tempo para aproveitar a lista: " + calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+
+
     }
 }
