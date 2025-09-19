@@ -22,6 +22,7 @@ public class TesteDeConversaoTemperatura implements ConversorTemperatura{
     public void fahrenheitParaCelsius(int fahrenheit) {
 
         int novoCelsius = (fahrenheit - 32) / (9/5);
+        // To DO verificar a conta e imprimir no console
 
     }
 }
