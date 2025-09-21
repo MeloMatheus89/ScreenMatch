@@ -4,6 +4,7 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.exercicios.modelos.Aluno;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class main {
@@ -61,6 +62,7 @@ public class main {
         listaDeFilmes.add(outroFilme);
         System.out.println("Tamanho da lista:  " +listaDeFilmes.size());
         System.out.println("Primeiro filma:  " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
 
 
 
