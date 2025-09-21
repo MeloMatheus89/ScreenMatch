@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.exercicios.modelos.Aluno;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class main {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -46,6 +48,19 @@ public class main {
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
+
+        Filme filmeDoPaulo = new Filme();
+        filmeDoPaulo.setNome("DogView");
+        filmeDoPaulo.setDuracaoEmMinutos(200);
+        filmeDoPaulo.avalia(10);
+        filmeDoPaulo.setAnoDeLancamento(2003);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoPaulo);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista:  " +listaDeFilmes.size());
+        System.out.println("Primeiro filma:  " + listaDeFilmes.get(0).getNome());
 
 
 
