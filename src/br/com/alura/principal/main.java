@@ -1,17 +1,16 @@
+package br.com.alura.principal;
+
 import br.com.alura.screematch.calculos.CalculadoraDeTempo;
 import br.com.alura.screematch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Filme;
-import br.com.alura.exercicios.modelos.Aluno;
 import br.com.alura.screenmatch.modelos.Serie;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O Poderoso Chefão");
-        meuFilme.setAnoDeLancamento(1970);
+        Filme meuFilme = new Filme("O Poderoso Chefão", 1970);
+
         meuFilme.setDuracaoEmMinutos(180);
 
         meuFilme.exibeFichaTecnica();
@@ -22,8 +21,8 @@ public class main {
         System.out.println(meuFilme.getTotalDeAvaliacoes());
 
 
-        Serie novaSerie = new Serie();
-        novaSerie.setNome("Lost");
+        Serie novaSerie = new Serie("Lost", 2005);
+
         novaSerie.setTemporadas(10);
         novaSerie.setEpisodiosPorTemporada(10);
         novaSerie.setMinutosPorEpisodio(50);
@@ -31,8 +30,8 @@ public class main {
         System.out.println("Quanto tempo para maratonar (em minutos): "+ novaSerie.getDuracaoEmMinutos());
 
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
+        Filme outroFilme = new Filme("Avatar", 2023);
+
         outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
@@ -50,19 +49,7 @@ public class main {
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         filtro.filtra(meuFilme);
 
-        Filme filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("DogView");
-        filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.avalia(10);
-        filmeDoPaulo.setAnoDeLancamento(2003);
 
-        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
-        listaDeFilmes.add(filmeDoPaulo);
-        listaDeFilmes.add(meuFilme);
-        listaDeFilmes.add(outroFilme);
-        System.out.println("Tamanho da lista:  " +listaDeFilmes.size());
-        System.out.println("Primeiro filma:  " + listaDeFilmes.get(0).getNome());
-        System.out.println(listaDeFilmes);
 
 
 
