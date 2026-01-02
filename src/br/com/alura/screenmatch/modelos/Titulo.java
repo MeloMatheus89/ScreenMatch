@@ -1,6 +1,6 @@
 package br.com.alura.screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -68,4 +68,12 @@ public class Titulo {
         return somaDasAvaliacoes/totalDeAvaliacoes;
     }
 
+
+    /*
+     Aqui estamos falando da ordenação. Por padrão vem escrito return 0. Precisamos reeserever essa ordenação após implementar o CompareTo lá na declaração da classe.
+//    O método abaixo diz que a gente pode comprarar usando o título  dos filmes usando o getNome() de cada um deles e ordenando entre si.    */
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 }
